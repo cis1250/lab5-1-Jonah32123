@@ -34,7 +34,7 @@ def get_sentence():
 
     return user_sentence
 
-def calculate_frequencies():
+def calculate_frequencies(user_sentence):
     global words
     global frequencies
 
@@ -62,6 +62,6 @@ sentence = get_sentence()
 words = []
 frequencies = []
 
-calculate_frequencies()
+calculate_frequencies(sentence)
 
 print_frequencies(words, frequencies)
