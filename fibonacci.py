@@ -25,9 +25,13 @@ def generate_fibonacci(terms):
     tmp = num1
     num1 += num2
     num2 = tmp
+  return sequence
 
 def print_sequence(sequence):
   for i in range(sequence.length() - 1):
     print("{sequence[i]}, ")
   print("{sequence[i]}")
 
+user_input = get_input()
+sequence = generate_fibonacci()
+print_sequence(sequence)
