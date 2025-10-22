@@ -4,12 +4,12 @@
 # TODO: (Read detailed instructions in the Readme file)
 
 def get_input():
-  input = 0
+  user_input = 0
   while (True):
-    input = input("Enter a positive integer: ")
-    if input.isdigit():
-      if int(input) > 0:
-        return int(input)
+    user_input = input("Enter a positive integer: ")
+    if user_input.isdigit():
+      if int(user_input) > 0:
+        return int(user_input)
       else:
         print("Enter a valid integer!")
     else:
@@ -19,19 +19,19 @@ def generate_fibonacci(terms):
   num1 = 1
   num2 = 0
   tmp = 0
-  sequence = [terms]
+  sequence = []
   for i in range(terms):
-    sequence[i] = num1
+    sequence.append(num1)
     tmp = num1
     num1 += num2
     num2 = tmp
   return sequence
 
 def print_sequence(sequence):
-  for i in range(sequence.length() - 1):
-    print("{sequence[i]}, ")
-  print("{sequence[i]}")
+  for i in range(len(sequence) - 1):
+    print(f"{sequence[i]}, ", end="")
+  print(f"{sequence[-1]}")
 
-user_input = get_input()
-sequence = generate_fibonacci()
+terms = get_input()
+sequence = generate_fibonacci(terms)
 print_sequence(sequence)
