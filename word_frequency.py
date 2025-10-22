@@ -24,3 +24,44 @@ def is_sentence(text):
         return False
 
     return True
+
+def get_sentence():
+    user_sentence = input("Enter a sentence: ")
+
+    while (is_sentence(user_sentence) == False):
+        print("This does not meet the criteria for a sentence.")
+        user_sentence = input("Enter a sentence: ")
+
+    return user_sentence
+
+def calculate_frequencies():
+    global words
+    global frequencies
+
+    isCopy = 0
+    currentWord = ""
+    splitSentence = re.split(r'[, \s]+', user_sentence)
+    
+    for i in range(0, len(splitSentence)):
+        currentWord = splitSentence[i].lower()
+        isCopy = 0
+        for e in range(0, len(words)):
+            if words[e] == currentWord:
+                isCopy = 1
+                frequencies[e] += 1
+        if isCopy == 0:
+            words.append(currentWord)
+            frequencies.append(1)
+
+def print_frequencies(words, frequencies):
+    for i in range(0, len(words)):
+        print("{}: {}".format(words[i], frequencies[i]))
+
+sentence = get_sentence()
+
+words = []
+frequencies = []
+
+calculate_frequencies()
+
+print_frequencies(words, frequencies)
