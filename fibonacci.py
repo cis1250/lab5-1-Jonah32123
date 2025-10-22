@@ -16,16 +16,18 @@ def get_input():
       print("Enter a valid integer!")
 
 def generate_fibonacci(terms):
-  i = 1
-  j = 0
+  num1 = 1
+  num2 = 0
   tmp = 0
   sequence = [terms]
   for i in range(terms):
-    sequence[i] = i
-    tmp = i
-    i = i + j
-    j = tmp
+    sequence[i] = num1
+    tmp = num1
+    num1 += num2
+    num2 = tmp
 
 def print_sequence(sequence):
-  print("{sequence}")
+  for i in range(sequence.length() - 1):
+    print("{sequence[i]}, ")
+  print("{sequence[i]}")
 
