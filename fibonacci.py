@@ -19,12 +19,13 @@ def generate_fibonacci(terms):
   i = 1
   j = 0
   tmp = 0
-  sequence = ""
+  sequence = [terms]
   for i in range(terms):
-    sequence = sequence + "{i} "
+    sequence[i] = i
     tmp = i
     i = i + j
     j = tmp
 
 def print_sequence(sequence):
   print("{sequence}")
+
